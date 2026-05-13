@@ -43,6 +43,17 @@ orders = [
             {"sku": "TAG-001",  "qty": 1, "price": 0.50},
         ],
     },
+    {
+        "order_id": "ord-004",
+        "user_id":  "usr-42",
+        "total":    115.50,
+        "status":   "placed",
+        "items": [
+            {"sku": "SOCK-010", "qty": 3, "price": 5.00},
+            {"sku": "TAG-001",  "qty": 1, "price": 0.50},
+            {"sku": "CAP-001",  "qty": 1, "price": 100.00},
+        ],
+    },
 ]
 
 for order in orders:

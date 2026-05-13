@@ -108,7 +108,7 @@ AWS account requirements:
 ### 1. Clone and set up the environment
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/project-training.git
+git clone https://github.com/jsparapan/project-training.git
 cd project-training
 
 python -m venv .venv

@@ -226,7 +226,7 @@ class ProjectTrainingStack(Stack):
             handler="handler.lambda_handler",
             # Point at the real code folder instead of Code.from_inline(...)
             code=lambda_.Code.from_asset(
-                "lambda_query",
+                "lambda",
                 bundling=BundlingOptions(
                     image=lambda_.Runtime.PYTHON_3_12.bundling_image,
                     command=[
