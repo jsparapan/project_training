@@ -14,7 +14,7 @@ concurrency:
 
 env:
   AWS_REGION:     eu-west-1
-  CDK_ACCOUNT:    835023969708
+  CDK_ACCOUNT: ${{ secrets.AWS_ACCOUNT_ID }}
   PYTHON_VERSION: "3.12"
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
