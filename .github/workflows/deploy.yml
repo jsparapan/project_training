@@ -8,30 +8,27 @@ on:
     branches:
       - main
 
-# Prevent concurrent deployments — queue them instead
 concurrency:
   group: cdk-deploy-${{ github.ref }}
   cancel-in-progress: false
 
 env:
-  AWS_REGION:    eu-west-1
-  CDK_ACCOUNT:   835023969708
+  AWS_REGION:     eu-west-1
+  CDK_ACCOUNT:    835023969708
   PYTHON_VERSION: "3.12"
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
 
-  # ---------------------------------------------------------------- #
-  # diff — runs on every PR, shows what infrastructure would change  #
-  # ---------------------------------------------------------------- #
   diff:
     name: CDK Diff
     runs-on: ubuntu-latest
     if: github.event_name == 'pull_request'
 
     permissions:
-      id-token: write   # required for OIDC
+      id-token: write
       contents: read
-      pull-requests: write  # to post diff as PR comment
+      pull-requests: write
 
     steps:
       - name: Checkout code
@@ -43,10 +40,10 @@ jobs:
           python-version: ${{ env.PYTHON_VERSION }}
           cache: pip
 
-      - name: Set up Node.js (CDK CLI needs it)
+      - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          node-version: "24"
 
       - name: Install CDK CLI
         run: npm install -g aws-cdk
@@ -83,9 +80,6 @@ jobs:
               body: body,
             });
 
-  # ---------------------------------------------------------------- #
-  # deploy — runs on push to main only                               #
-  # ---------------------------------------------------------------- #
   deploy:
     name: CDK Deploy
     runs-on: ubuntu-latest
@@ -108,7 +102,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          node-version: "24"
 
       - name: Install CDK CLI
         run: npm install -g aws-cdk
