@@ -34,7 +34,7 @@ Athena (ad-hoc SQL queries on Iceberg)
 Client → Kong Gateway (Docker) → Lambda Function URL (order-query) → Aurora
 ```
 
-![alt text](order_pipeline_aws_faithful_diagram.svg)
+![alt text](arquitetura.png)
 
 ---
 
