@@ -1,6 +1,6 @@
 # Order Events Pipeline
 
-A fully serverless, event-driven data pipeline built on AWS, demonstrating real-world use of Kinesis, Lambda, Aurora Serverless, Glue, Iceberg, Kong, and CDK — deployed and managed via GitHub Actions CI/CD.
+A fully serverless, event-driven data pipeline, built on AWS for learning purposes only, demonstrating the practical use of Kinesis, Lambda, Aurora Serverless, Glue, Iceberg, Kong, and CDK — deployed and managed via GitHub Actions CI/CD.
 
 ---
 
